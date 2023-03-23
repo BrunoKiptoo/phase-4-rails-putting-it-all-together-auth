@@ -1,3 +1,19 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # POST /signup
+  post '/signup', to:'users#create'
+
+  # POST /login
+  post '/login', to:'sessions#create'
+
+  # GET /me
+  get '/me', to:'users#show'
+
+  # DELETE /logout
+  delete '/logout', to:'sessions#destroy'
+
+  # GET /recipes
+  get '/recipes', to:'recipes#index'
+
+  # POST /recipes
+  post '/recipes', to:'recipes#create'
 end
